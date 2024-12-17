@@ -35,7 +35,6 @@ search_non_terminal_tasks() {
 
 # Define directories to skip - you should add reasons why it's being skipped.
 directories_to_skip=(
-  "tasks/sep/base-003-fp-granite-prestate" # investigating why this simulation breaks.
   "tasks/sep/013-fp-granite-prestate" # investigating why this simulation breaks.
 )
 
