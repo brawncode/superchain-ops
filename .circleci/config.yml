@@ -258,5 +258,8 @@ workflows:
       - just_simulate_sc_rehearsal_1
       - just_simulate_sc_rehearsal_2
       - just_simulate_sc_rehearsal_4
-
-      # - simulate_non_terminal_tasks
+      # Simulate non-terminal tasks. 
+      # This process finds all non-terminal tasks that currently
+      # exist in the task list and simulates them to ensure that
+      # they are still valid.
+      - simulate_non_terminal_tasks
