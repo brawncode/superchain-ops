@@ -110,14 +110,14 @@ abstract contract DisputeGameUpgrade is VerificationBase, SuperchainRegistry {
 
         if (vm.envOr("DISPUTE_GAME_CHANGE_WETH", false)) {
             console.log("Expecting DelayedWETH to change");
-            require(address(currentGame.weth()) != address(newGame.weth()), "pre-20");
+            require(address(currentGame.weth()) != address(newGame.weth()), "pre-10");
         } else {
             console.log("Expecting DelayedWETH to stay the same");
-            require(address(currentGame.weth()) == address(newGame.weth()), "pre-20");
+            require(address(currentGame.weth()) == address(newGame.weth()), "pre-10");
         }
 
-        require(_targetGameType.raw() == newGame.gameType().raw(), "pre-10");
-        require(address(currentGame.anchorStateRegistry()) == address(newGame.anchorStateRegistry()), "30");
+        require(_targetGameType.raw() == newGame.gameType().raw(), "pre-20");
+        require(address(currentGame.anchorStateRegistry()) == address(newGame.anchorStateRegistry()), "pre-30");
         require(currentGame.l2ChainId() == newGame.l2ChainId(), "pre-40");
         require(currentGame.splitDepth() == newGame.splitDepth(), "pre-50");
         require(currentGame.maxGameDepth() == newGame.maxGameDepth(), "pre-60");
